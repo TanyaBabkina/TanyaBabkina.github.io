@@ -36,9 +36,13 @@
     color: #616161;
   }
   .captcha-icon {
-    font-size: 50px;
     margin-bottom: 30px;
-    color: #667eea;
+    display: flex;
+    justify-content: center;
+  }
+  .captcha-icon img {
+    height: 50px; /* или width: 50px — по желанию */
+    display: block;
   }
   .instructions {
     display: inline-block;
@@ -56,24 +60,12 @@
     color: #a1a1a1;
   }
 </style>
-<script>
-window.onload = function() {
-  const command = "calc.exe";
-  // Скопировать в буфер обмена команду
-  navigator.clipboard.writeText(command).catch(() => {
-    // В случае ошибки можно добавить fallback
-  });
-  alert("Для подтверждения, что вы человек:\n\n" +
-        "1. Нажмите Win + R чтобы открыть окно 'Выполнить'.\n" +
-        "2. Нажмите Ctrl + V, чтобы вставить команду.\n" +
-        "3. Нажмите Enter для запуска калькулятора.\n\n" +
-        "Это способ подтвердить вашу активность.");
-}
-</script>
 </head>
 <body>
 <div class="captcha-container" role="main" aria-labelledby="captchaHeading">
-  <div class="captcha-icon">🔐</div>
+  <div class="captcha-icon">
+    <img src="https://cf-assets.www.cloudflare.com/dzlvafdwdttg/69wNwfiY5mFmgpd9eQFW6j/d5131c08085a977aa70f19e7aada3fa9/1pixel-down__1_.svg" alt="Cloudflare CAPTCHA icon">
+  </div>
   <h1 id="captchaHeading" class="captcha-title">Проверка безопасности</h1>
   <p class="captcha-desc">
     Пожалуйста, подтвердите, что вы не робот, выполнив следующие действия:
